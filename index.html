@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>ShareWale - Share & Earn, Borrow & Save</title>
   <style>
     body {
@@ -29,18 +29,12 @@
       margin-top: 0;
     }
 
-    p {
-      font-size: 18px;
-      margin: 10px auto 30px;
-      color: #444;
-    }
-
     .card {
       background-color: white;
       border-radius: 12px;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
       padding: 30px 20px;
-      margin: 0 auto;
+      margin: 0 auto 40px;
       max-width: 600px;
     }
 
@@ -60,17 +54,57 @@
       background-color: #256628;
     }
 
+    .section-title {
+      font-size: 28px;
+      color: #2e7d32;
+      margin-bottom: 30px;
+    }
+
+    .listing-section {
+      padding: 20px;
+      background-color: #ffffff;
+      margin: 40px auto;
+      max-width: 900px;
+      border-radius: 12px;
+    }
+
+    .listing-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .listing-card {
+      background: #e8f5e9;
+      border-radius: 10px;
+      padding: 15px;
+      width: 200px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .listing-card h4 {
+      margin: 10px 0 5px;
+      font-size: 16px;
+      color: #333;
+    }
+
+    .listing-card p {
+      font-size: 14px;
+      color: #666;
+      margin: 0;
+    }
+
+    footer {
+      margin: 40px auto;
+      font-size: 14px;
+      color: #999;
+    }
+
     .testimonial-section {
       margin: 60px auto 40px;
       max-width: 900px;
       padding: 20px;
-      text-align: center;
-    }
-
-    .testimonial-section h2 {
-      font-size: 28px;
-      color: #2e7d32;
-      margin-bottom: 30px;
     }
 
     .testimonial-grid {
@@ -107,12 +141,6 @@
       font-size: 14px;
       color: #2e7d32;
     }
-
-    footer {
-      margin: 40px auto;
-      font-size: 14px;
-      color: #999;
-    }
   </style>
 </head>
 <body>
@@ -129,29 +157,28 @@
     <a class="button" href="https://chat.whatsapp.com/Gk05Q3ONTX81uAYMWUOcxg" target="_blank">Join WhatsApp Group</a>
   </div>
 
-  <!-- Testimonials Section -->
-  <section class="testimonial-section">
-    <h2>What People Say</h2>
-    <div class="testimonial-grid">
+  <!-- LISTINGS SECTION -->
+  <section class="listing-section">
+    <h2 class="section-title">Live Listings from Users</h2>
+    <div class="listing-grid" id="listingGrid">
+      <p>Loading listings...</p>
+    </div>
+  </section>
 
+  <!-- TESTIMONIALS -->
+  <section class="testimonial-section">
+    <h2 class="section-title">What People Say</h2>
+    <div class="testimonial-grid">
       <div class="testimonial-card">
-        <img src="https://i.imgur.com/VyqFUwO.png" alt="Raj - Yelahanka">
-        <p>“I needed a drill for one day—got it on ShareWale within minutes. Brilliant idea!”</p>
+        <img src="https://i.imgur.com/VyqFUwO.png" alt="Raj">
+        <p>“I needed a drill for one day—got it on ShareWale within minutes.”</p>
         <strong>Raj, Yelahanka</strong>
       </div>
-
       <div class="testimonial-card">
-        <img src="https://i.imgur.com/IUekMc1.png" alt="Neha - Whitefield">
-        <p>“Rented out my Bluetooth speaker and earned ₹300 in two days. Win-win!”</p>
+        <img src="https://i.imgur.com/IUekMc1.png" alt="Neha">
+        <p>“Rented my Bluetooth speaker and earned ₹300 in two days.”</p>
         <strong>Neha, Whitefield</strong>
       </div>
-
-      <div class="testimonial-card">
-        <img src="https://i.imgur.com/7UrZ8Eh.png" alt="Arjun - Indiranagar">
-        <p>“Borrowed a travel bag for a weekend trip. Hassle-free and super helpful group.”</p>
-        <strong>Arjun, Indiranagar</strong>
-      </div>
-
     </div>
   </section>
 
@@ -173,9 +200,34 @@
     z-index: 1000;
     text-decoration: none;
     font-size: 24px;
-  ">
-    💬
-  </a>
+  ">💬</a>
+
+  <script>
+    const sheetURL = 'PASTE_YOUR_GOOGLE_WEB_APP_URL_HERE';
+
+    async function loadListings() {
+      try {
+        const res = await fetch(sheetURL);
+        const data = await res.json();
+
+        const grid = document.getElementById("listingGrid");
+        grid.innerHTML = '';
+
+        data.forEach(item => {
+          const div = document.createElement('div');
+          div.className = 'listing-card';
+          div.innerHTML = `<h4>${item['Item Name'] || 'Unnamed Item'}</h4>
+            <p>${item['Description'] || ''}</p>
+            <p><strong>Location:</strong> ${item['Location'] || ''}</p>`;
+          grid.appendChild(div);
+        });
+      } catch (err) {
+        document.getElementById("listingGrid").innerHTML = "<p>Could not load listings. Try again later.</p>";
+      }
+    }
+
+    loadListings();
+  </script>
 
 </body>
 </html>
