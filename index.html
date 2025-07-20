@@ -2,86 +2,65 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ShareWale - Lend & Borrow Items</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ShareWale</title>
   <style>
     body {
-      margin: 0;
       font-family: Arial, sans-serif;
-      background: #f4f4f4;
-      color: #333;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+      text-align: center;
     }
     header {
-      background: #4caf50;
-      color: white;
       padding: 20px;
-      text-align: center;
+      background-color: #ffffff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
-    .container {
-      max-width: 800px;
-      margin: auto;
-      padding: 20px;
-    }
-    .hero {
-      background: white;
-      padding: 30px;
-      text-align: center;
-      border-radius: 10px;
-      margin-bottom: 20px;
-    }
-    .hero h1 {
+    header img {
+      max-width: 150px;
+      height: auto;
       margin-bottom: 10px;
     }
-    .buttons a {
+    h1 {
+      color: #2e7d32;
+      font-size: 36px;
+      margin: 10px 0;
+    }
+    p {
+      font-size: 18px;
+      color: #555;
+    }
+    .button-group {
+      margin-top: 30px;
+    }
+    .button {
       display: inline-block;
       margin: 10px;
-      padding: 12px 20px;
-      background: #4caf50;
+      padding: 15px 25px;
+      background-color: #2e7d32;
       color: white;
       text-decoration: none;
       border-radius: 8px;
+      font-size: 16px;
     }
-    .steps {
-      background: white;
-      border-radius: 10px;
-      padding: 20px;
-      margin-bottom: 20px;
-    }
-    .footer {
-      text-align: center;
-      padding: 10px;
-      background: #ddd;
+    .button:hover {
+      background-color: #1b5e20;
     }
   </style>
 </head>
 <body>
+
   <header>
+    <img src="logo.jpg" alt="ShareWale Logo" />
     <h1>ShareWale</h1>
-    <p>Lend & Borrow Everyday Items Nearby</p>
+    <p>Why buy when you can borrow?</p>
   </header>
 
-  <div class="container">
-    <div class="hero">
-      <h1>Welcome to ShareWale!</h1>
-      <p>Post your items or find what you need, all through your local community.</p>
-      <div class="buttons">
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLScepzQ6F2FuPLiENfjBnwzGIeI1HCff-cFZphgw_NCaxl7Arw/viewform" target="_blank">Post an Item</a>
-        <a href="https://chat.whatsapp.com/Gk05Q3ONTX81uAYMWUOcxg" target="_blank">Join WhatsApp Group</a>
-      </div>
-    </div>
-
-    <div class="steps">
-      <h2>How It Works</h2>
-      <ol>
-        <li><strong>Step 1:</strong> Fill the form to lend or borrow an item</li>
-        <li><strong>Step 2:</strong> Share or connect through the WhatsApp group</li>
-        <li><strong>Step 3:</strong> Coordinate and enjoy easy sharing!</li>
-      </ol>
-    </div>
+  <div class="button-group">
+    <a href="https://chat.whatsapp.com/Gk05Q3ONTX81uAYMWUOcxg" class="button" target="_blank">Join WhatsApp Group</a>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLScepzQ6F2FuPLiENfjBnwzGIeI1HCff-cFZphgw_NCaxl7Arw/viewform" class="button" target="_blank">Lend / Borrow Form</a>
   </div>
 
-  <div class="footer">
-    Contact us: <a href="mailto:ShareWale07@gmail.com">ShareWale07@gmail.com</a>
-  </div>
 </body>
 </html>
