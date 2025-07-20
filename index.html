@@ -1,66 +1,181 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>ShareWale</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ShareWale - Share & Earn, Borrow & Save</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f9f4;
       margin: 0;
       padding: 0;
-      background-color: #f9f9f9;
       text-align: center;
     }
+
     header {
       padding: 20px;
-      background-color: #ffffff;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
+
     header img {
-      max-width: 150px;
-      height: auto;
+      width: 100px;
+      border-radius: 10px;
       margin-bottom: 10px;
     }
+
     h1 {
       color: #2e7d32;
-      font-size: 36px;
-      margin: 10px 0;
+      font-size: 32px;
+      margin-top: 0;
     }
+
     p {
       font-size: 18px;
-      color: #555;
+      margin: 10px auto 30px;
+      color: #444;
     }
-    .button-group {
-      margin-top: 30px;
+
+    .card {
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      padding: 30px 20px;
+      margin: 0 auto;
+      max-width: 600px;
     }
-    .button {
+
+    a.button {
       display: inline-block;
-      margin: 10px;
-      padding: 15px 25px;
+      margin-top: 20px;
+      padding: 12px 25px;
       background-color: #2e7d32;
       color: white;
-      text-decoration: none;
       border-radius: 8px;
-      font-size: 16px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s;
     }
-    .button:hover {
-      background-color: #1b5e20;
+
+    a.button:hover {
+      background-color: #256628;
+    }
+
+    .testimonial-section {
+      margin: 60px auto 40px;
+      max-width: 900px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .testimonial-section h2 {
+      font-size: 28px;
+      color: #2e7d32;
+      margin-bottom: 30px;
+    }
+
+    .testimonial-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .testimonial-card {
+      background: #ffffff;
+      border-radius: 15px;
+      padding: 20px;
+      width: 250px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+      text-align: center;
+    }
+
+    .testimonial-card img {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 15px;
+    }
+
+    .testimonial-card p {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 10px;
+    }
+
+    .testimonial-card strong {
+      font-size: 14px;
+      color: #2e7d32;
+    }
+
+    footer {
+      margin: 40px auto;
+      font-size: 14px;
+      color: #999;
     }
   </style>
 </head>
 <body>
 
   <header>
-    <img src="logo.jpg" alt="ShareWale Logo" />
+    <img src="logo.jpg" alt="ShareWale Logo">
     <h1>ShareWale</h1>
-    <p>Why buy when you can borrow?</p>
+    <p>Rent items locally. Borrow and lend within your neighborhood.</p>
   </header>
 
-  <div class="button-group">
-    <a href="https://chat.whatsapp.com/Gk05Q3ONTX81uAYMWUOcxg" class="button" target="_blank">Join WhatsApp Group</a>
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLScepzQ6F2FuPLiENfjBnwzGIeI1HCff-cFZphgw_NCaxl7Arw/viewform" class="button" target="_blank">Lend / Borrow Form</a>
+  <div class="card">
+    <h2>Join Our WhatsApp Community</h2>
+    <p>Post what you need or what you're renting out. Connect safely with nearby members.</p>
+    <a class="button" href="https://chat.whatsapp.com/Gk05Q3ONTX81uAYMWUOcxg" target="_blank">Join WhatsApp Group</a>
   </div>
+
+  <!-- Testimonials Section -->
+  <section class="testimonial-section">
+    <h2>What People Say</h2>
+    <div class="testimonial-grid">
+
+      <div class="testimonial-card">
+        <img src="https://i.imgur.com/VyqFUwO.png" alt="Raj - Yelahanka">
+        <p>“I needed a drill for one day—got it on ShareWale within minutes. Brilliant idea!”</p>
+        <strong>Raj, Yelahanka</strong>
+      </div>
+
+      <div class="testimonial-card">
+        <img src="https://i.imgur.com/IUekMc1.png" alt="Neha - Whitefield">
+        <p>“Rented out my Bluetooth speaker and earned ₹300 in two days. Win-win!”</p>
+        <strong>Neha, Whitefield</strong>
+      </div>
+
+      <div class="testimonial-card">
+        <img src="https://i.imgur.com/7UrZ8Eh.png" alt="Arjun - Indiranagar">
+        <p>“Borrowed a travel bag for a weekend trip. Hassle-free and super helpful group.”</p>
+        <strong>Arjun, Indiranagar</strong>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 ShareWale. All rights reserved.
+  </footer>
+
+  <!-- WhatsApp Chat Button -->
+  <a href="https://wa.me/918210571855" target="_blank" title="Chat with us on WhatsApp" style="
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25D366;
+    color: white;
+    border-radius: 50%;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    z-index: 1000;
+    text-decoration: none;
+    font-size: 24px;
+  ">
+    💬
+  </a>
 
 </body>
 </html>
